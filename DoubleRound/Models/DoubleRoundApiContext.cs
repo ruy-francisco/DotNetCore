@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using DoubleRound.Models.Contracts;
 
 namespace DoubleRound.Models
 {
@@ -9,6 +8,5 @@ namespace DoubleRound.Models
             :base(options){}
 
         public DbSet<DoubleRound> DoubleRounds { get; set; }
-        public DbSet<IProvider> Providers { get; set; }
     }
 }
