@@ -41,7 +41,9 @@ namespace DoubleRound.Controllers
                 DateTime finalPeriod = new DateTime(date.Year, date.Month, date.Day, 23, 59, 59);
 
                 var doubleRounds = _context.DoubleRounds
-                    .Where(dr => dr.Begin >= initialPeriod && dr.Begin <= finalPeriod)   
+                    .Where(dr => dr.BeginDate >= initialPeriod && dr.BeginDate <= finalPeriod) 
+                    .OrderBy(dr => dr.BeginDate)
+                    .ThenBy(dr => dr.EndDate)  
                     .ToList();
 
                 if (doubleRounds.Count == 0)
@@ -81,6 +83,50 @@ namespace DoubleRound.Controllers
                 return CreatedAtRoute("GetById", new {id = doubleRound.Id }, doubleRound);
             }
             catch (Exception)
+            {                
+                throw;
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteDoubleRoundById(int id){
+            try
+            {
+                var doubleRound = _context.DoubleRounds.FirstOrDefault(d => d.Id == id);
+
+                if (doubleRound == null)
+                    return NotFound();
+
+                _context.DoubleRounds.Remove(doubleRound);
+                _context.SaveChanges();
+
+                return new NoContentResult();
+            }
+            catch (System.Exception)
+            {                
+                throw;
+            }
+        }
+
+        [HttpDelete("{endDate}")]
+        public IActionResult DeleteDoubleRoundsUntilDate(DateTime endDate) {
+            try
+            {
+                DateTime finalDate = new DateTime(endDate.Year, endDate.Month, endDate.Day, 23, 59, 59);
+
+                var doubleRounds = _context.DoubleRounds.Where(d => d.EndDate < finalDate).ToList();
+
+                if (doubleRounds.Count == 0)
+                    return NotFound();
+
+                for (int i = 0; i < doubleRounds.Count; i++)
+                    _context.DoubleRounds.Remove(doubleRounds[i]);
+                
+                _context.SaveChanges();
+
+                return new NoContentResult();
+            }
+            catch (System.Exception)
             {                
                 throw;
             }

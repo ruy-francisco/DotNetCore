@@ -8,23 +8,23 @@ namespace DoubleRound.Models
         public int Id { get; set; }
      
         [Required]
-        public DateTime Begin { get; set; }
+        public DateTime BeginDate { get; set; }
 
         [Required]
-        public DateTime End { get; set; }
+        public DateTime EndDate { get; set; }
         
         [Required]
         public string Place { get; set; }
 
         [Required]
-        public double Latitude { get; set; }
+        public decimal Latitude { get; set; }
 
         [Required]
-        public double Longitude { get; set; }
+        public decimal Longitude { get; set; }
 
         public string PlaceId { get; set; }
 
         [Required]
-        public string Address { get; set; }
+        public string PlaceAddress { get; set; }
     }
 }
