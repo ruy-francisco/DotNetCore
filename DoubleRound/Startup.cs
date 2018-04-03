@@ -7,7 +7,7 @@ namespace DoubleRound
 {
     public class Startup
     {
-        private static string _connectionString = @"Server=localhost;Database=DoubleRound;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=wabhzpc217\sqlexpress;Database=DoubleRound;Trusted_Connection=True;";
 
         public void ConfigureServices(IServiceCollection services) {
             services.AddDbContext<DoubleRoundApiContext>(opt => opt.UseSqlServer(_connectionString));
