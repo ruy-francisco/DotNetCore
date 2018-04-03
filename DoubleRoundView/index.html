@@ -13,9 +13,9 @@
 <body>
 	<div id="NewDoubleRoundForm">
 		<span class="inputFieldLabel">Estabelecimento</span><br>
-		<input id="placeName" type="text" class="inputField" /><br>
+		<input id="placeName" v-model="placeName" type="text" class="inputField" /><br>
 		<span class="inputFieldLabel">Endereço</span><br>
-		<input id="placeAddress" type="text" class="inputField" /><br>
+		<input id="placeAddress" v-model="placeAddress" type="text" class="inputField" /><br>
 		<fieldset>
 			<legend>Período</legend>
 			<span class="inputFieldLabel">Início</span><br>
@@ -23,10 +23,11 @@
 			<span class="inputFieldLabel">Fim</span><br>
 			<input type="datetime-local" class="inputField" />
 		</fieldset><br><br>
-		<button>Salvar</button>
+		<button v-on:click="insertDoubleRound">Salvar</button>
 	</div>
 	<hr/><br><br>
 	<div id="mapDiv"></div>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg4mVTBhjHqQCAv0qaVrUgcROyVZJJm94&libraries=places&callback=getCurrentLocation" async defer></script>
+<script type="text/javascript" src="interaction/userInput.js"></script>
 </html>
