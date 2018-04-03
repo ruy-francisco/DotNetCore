@@ -1,5 +1,8 @@
 <html>
 <head>	
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<script type="text/javascript" src="maps/google/autocomplete.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
@@ -9,18 +12,21 @@
 </head>
 <body>
 	<div id="NewDoubleRoundForm">
-		<span>Estabelecimento</span>
-		<input type="text" size="30" /><br>
-		<span>Endereço</span>
-		<input id="placeName" type="text" size="50" /><br>
-		<span>De</span>
-		<input type="datetime-local" />
-		<span>Até</span>
-		<input type="datetime-local" /><br><br>
+		<span class="inputFieldLabel">Estabelecimento</span><br>
+		<input id="placeName" type="text" class="inputField" /><br>
+		<span class="inputFieldLabel">Endereço</span><br>
+		<input id="placeAddress" type="text" class="inputField" /><br>
+		<fieldset>
+			<legend>Período</legend>
+			<span class="inputFieldLabel">Início</span><br>
+			<input type="datetime-local" class="inputField" /><br>
+			<span class="inputFieldLabel">Fim</span><br>
+			<input type="datetime-local" class="inputField" />
+		</fieldset><br><br>
 		<button>Salvar</button>
-		<hr/><br><br>
-		<div id="mapDiv"></div>
 	</div>
+	<hr/><br><br>
+	<div id="mapDiv"></div>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg4mVTBhjHqQCAv0qaVrUgcROyVZJJm94&libraries=places&callback=getCurrentLocation" async defer></script>
 </html>

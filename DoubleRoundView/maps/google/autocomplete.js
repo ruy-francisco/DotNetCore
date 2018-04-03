@@ -23,7 +23,7 @@ var initMap = function(currentLatitude, currentLongitude){
 		zoom: 13
 	});
 
-	let addressInput = document.getElementById("placeName"); 
+	let addressInput = document.getElementById("placeAddress"); 
 
 	let autocomplete = new google.maps.places.Autocomplete(addressInput);
 	autocomplete.bindTo("bounds", map);
@@ -40,7 +40,7 @@ var initMap = function(currentLatitude, currentLongitude){
 		var place = autocomplete.getPlace();
 
 		if(!place.geometry){
-			window.alert("No details available for input: " + place.name);
+			window.alert("Não foi possível encontrar o seguinte endereço: " + place.name);
 			return;
 		}	
 

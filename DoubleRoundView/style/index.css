@@ -1,3 +1,32 @@
 #mapDiv {
 	height: 100%;
 }
+
+#NewDoubleRoundForm {
+	width: 100%;
+	max-width: 100%;
+	margin: 0 auto;
+	display: block;
+}
+
+.inputField {
+	margin-bottom: 10px;
+}
+
+.inputFieldLabel {
+	
+}
+
+#placeName {
+	width: 300px;
+}
+
+#placeAddress {
+	width: 500px;
+}
+
+@media screen and (max-width: 500px) {
+	#placeName, #placeAddress {
+		width: 100%;
+	}
+}
