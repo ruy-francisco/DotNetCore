@@ -1,6 +1,9 @@
 <html>
-<head>
+<head>	
+	<script type="text/javascript" src="maps/google/autocomplete.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="style/index.css">
 
 	<title></title>
 </head>
@@ -9,12 +12,15 @@
 		<span>Estabelecimento</span>
 		<input type="text" size="30" /><br>
 		<span>Endereço</span>
-		<input type="text" size="50" /><br>
+		<input id="placeName" type="text" size="50" /><br>
 		<span>De</span>
 		<input type="datetime-local" />
 		<span>Até</span>
 		<input type="datetime-local" /><br><br>
 		<button>Salvar</button>
+		<hr/><br><br>
+		<div id="mapDiv"></div>
 	</div>
 </body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg4mVTBhjHqQCAv0qaVrUgcROyVZJJm94&libraries=places&callback=getCurrentLocation" async defer></script>
 </html>
