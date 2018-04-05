@@ -42,7 +42,9 @@ var initMap = function(currentLatitude, currentLongitude){
 		if(!place.geometry){
 			window.alert("Não foi possível encontrar o seguinte endereço: " + place.name);
 			return;
-		}	
+		}
+
+		setPlaceInformation(place);
 
 		// If the place has a geometry, then present it on a map.
 	  	if (place.geometry.viewport) {
@@ -63,4 +65,11 @@ var initMap = function(currentLatitude, currentLongitude){
 	  	marker.setVisible(true);
 	});
 
+}
+
+var setPlaceInformation = function(place){
+	$("#placeId").val(place.place_id);
+	$("#placeLatitude").val(place.geometry.location.lat());
+	$("#placeLongitude").val(place.geometry.location.lng());
+	$("#placeDefinitiveAddress").val(place.formatted_address);
 }

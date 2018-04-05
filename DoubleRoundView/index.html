@@ -3,8 +3,10 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="maps/google/autocomplete.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="style/index.css">
 
@@ -12,22 +14,34 @@
 </head>
 <body>
 	<div id="NewDoubleRoundForm">
+		<input type="hidden" id="placeId" />
+		<input type="hidden" id="placeLatitude" />
+		<input type="hidden" id="placeLongitude" />
+		<input type="hidden" id="placeDefinitiveAddress" />
+		<p v-if="errors.length">
+			<b>Corriga os erros abaixo</b>
+			<ul>
+				<li v-for="error in errors">{{ error }}</li>
+			</ul>
+		</p>
+
 		<span class="inputFieldLabel">Estabelecimento</span><br>
 		<input id="placeName" v-model="placeName" type="text" class="inputField" /><br>
-		<span class="inputFieldLabel">Endereço</span><br>
-		<input id="placeAddress" v-model="placeAddress" type="text" class="inputField" /><br>
 		<fieldset>
 			<legend>Período</legend>
 			<span class="inputFieldLabel">Início</span><br>
-			<input type="datetime-local" class="inputField" /><br>
+			<input type="datetime-local" v-model="beginDate" class="inputField" /><br>
 			<span class="inputFieldLabel">Fim</span><br>
-			<input type="datetime-local" class="inputField" />
-		</fieldset><br><br>
-		<button v-on:click="insertDoubleRound">Salvar</button>
+			<input type="datetime-local" v-model="endDate" class="inputField" />
+		</fieldset><br>		
+		<span class="inputFieldLabel">Endereço</span><br>
+		<input id="placeAddress" v-model="placeAddress" type="text" class="inputField" /><br><br>
+		<button v-on:click="validadeInputInformation">Salvar</button>
 	</div>
 	<hr/><br><br>
 	<div id="mapDiv"></div>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg4mVTBhjHqQCAv0qaVrUgcROyVZJJm94&libraries=places&callback=getCurrentLocation" async defer></script>
+<script type="text/javascript" src="dataManagement/httpServices.js"></script>
 <script type="text/javascript" src="interaction/userInput.js"></script>
 </html>

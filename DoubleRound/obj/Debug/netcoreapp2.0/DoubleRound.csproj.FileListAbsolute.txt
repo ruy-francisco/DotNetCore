@@ -1,0 +1,10 @@
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\bin\Debug\netcoreapp2.0\DoubleRound.dll
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\bin\Debug\netcoreapp2.0\DoubleRound.deps.json
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\bin\Debug\netcoreapp2.0\DoubleRound.runtimeconfig.json
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\bin\Debug\netcoreapp2.0\DoubleRound.runtimeconfig.dev.json
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\bin\Debug\netcoreapp2.0\DoubleRound.pdb
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\obj\Debug\netcoreapp2.0\DoubleRound.csproj.CoreCompileInputs.cache
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\obj\Debug\netcoreapp2.0\DoubleRound.AssemblyInfoInputs.cache
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\obj\Debug\netcoreapp2.0\DoubleRound.AssemblyInfo.cs
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\obj\Debug\netcoreapp2.0\DoubleRound.dll
+C:\Users\ruy.almeida\Documents\DotNetCore\DoubleRound\obj\Debug\netcoreapp2.0\DoubleRound.pdb
