@@ -5,10 +5,7 @@ var NewDoubleRoundForm = new Vue({
 		placeName: null,
 		placeAddress: null,
 		beginDate: null,
-		endDate: null,
-		placeId: null,
-		placeLatitude: null,
-		placeLongitude: null
+		endDate: null
 	},
 	methods: {
 		validadeInputInformation: function(e) {

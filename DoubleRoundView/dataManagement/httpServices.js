@@ -16,3 +16,21 @@ window.saveNewDoubleRound = function(inputData) {
 		}
 	});
 }
+
+window.getDoubleRoundsByDate = function(date) {
+	let url = baseUrl + "GetDoubleRoundsByPeriod";
+
+	$.ajax({
+		url: url,
+		data: {
+			"date": date
+		},
+		method: "get",
+		success: function(response){
+			console.log(response);
+		},
+		error: function(xhr, status, error){
+			console.log(error);
+		}
+	});
+}

@@ -1,0 +1,66 @@
+body {
+	position: relative;
+}
+
+#DoubleRoundeSearchArea {
+	height: 300px;
+}
+
+#doubleRoundSearch {
+	position: relative;
+	float: left;
+	left: 10%;
+	width: 30%;
+	border: 0px solid black;
+}
+
+#doubleRoundList {
+	position: relative;
+	float: left;
+	left: 1%;
+	width: 60%;
+	height: 200px;	
+	border: 0px solid red;
+}
+
+#recoveredDoubleRounds {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1vw;
+}
+
+#recoveredDoubleRounds td, #recoveredDoubleRounds th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#recoveredDoubleRounds tr:nth-child(even){background-color: #f2f2f2;}
+
+#recoveredDoubleRounds tr:hover {background-color: #ddd;}
+
+#recoveredDoubleRounds th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4c8daf;
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+	#doubleRoundSearch {
+		position: static;
+		width: 100%;
+	}
+
+	#doubleRoundList {
+		position: static;
+		margin-top: 10px;
+		width: 100%;
+		border-left: 0px solid black;
+	}
+
+	#recoveredDoubleRounds {
+		font-size: 3vw;
+	}
+}
